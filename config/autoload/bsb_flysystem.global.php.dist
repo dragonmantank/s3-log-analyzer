@@ -1,0 +1,22 @@
+<?php
+return [
+    'bsb_flysystem' => [
+        'adapters' => [
+            'awss3_default'     => [
+                'type'    => 'awss3',
+                'options' => [
+                    'key'    => 'your-aws-s3-key',
+                    'secret' => 'your-aws-s3-secret',
+                    'bucket' => 'your-log-bucket-name',
+                ],
+            ],
+        ],
+        'filesystems' => [
+            'default' => [
+                'adapter' => 'awss3_default',
+                'cache' => false,
+                'eventable' => false,
+            ],
+        ],
+    ],
+];

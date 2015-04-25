@@ -1,0 +1,44 @@
+<div class="jumbotron">
+    <h1><?php echo sprintf($this->translate('Welcome to %sS3 Log Analyzer%s'), '<span class="zf-green">', '</span>') ?></h1>
+    <p><?php echo sprintf($this->translate('Thanks for giving %sS3 Log Analyzer%s a try. Please let me know what you think of it, and Github pull requests are appreciated.'), '<a href="https://github.com/adamculp/s3-log-analyzer" target="_blank">', '</a>') ?></p>
+    <p><a class="btn btn-info btn-lg" href="/logs" target="_blank"><?php echo $this->translate('Start by importing S3 logs') ?> &raquo;</a></p>
+</div>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->translate('Under Development') ?></h3>
+            </div>
+            <div class="panel-body">
+                <p><?php echo sprintf($this->translate('S3 Log Analyzer is under development. Please the repo periodically for update. As the project matures we hope to add documentation and additional features.')) ?></p>
+                <p><a class="btn btn-success pull-right" href="https://github.com/adamculp/s3-log-analyzer" target="_blank"><?php echo $this->translate('Github Repo') ?> &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->translate('Add Modules') ?></h3>
+            </div>
+            <div class="panel-body">
+                <p><?php echo sprintf($this->translate('We welcome the community to develop more ZF2 modules to add features and functionality rather than altering existing modules...where it makes sense.')) ?></p>
+                <p><a class="btn btn-success pull-right" href="http://modules.zendframework.com/" target="_blank"><?php echo $this->translate('Add ZF2 Modules') ?> &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->translate('Help &amp; Support') ?></h3>
+            </div>
+            <div class="panel-body">
+                <p><?php echo sprintf($this->translate('Sorry, but there is no support with this free and open source project. However, we welcome issues and wishlist items submitted via the "issues" module at Github.')) ?></p>
+                <p><a class="btn btn-success pull-right" href="https://github.com/adamculp/s3-log-analyzer/issues" target="_blank"><?php echo $this->translate('Issue and Bugs') ?> &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+</div>
