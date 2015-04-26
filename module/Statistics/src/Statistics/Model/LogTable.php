@@ -56,6 +56,7 @@ class LogTable
         {
             $select->columns(['file', 'downloads' => new Expression('COUNT(id)') ]);
             $select->group(['file']);
+            $select->order(['downloads' => 'DESC']);
         });
         
         return $resultSet->toArray();
@@ -67,6 +68,7 @@ class LogTable
         {
             $select->columns(['file', 'downloads' => new Expression('COUNT(DISTINCT(ip))') ]);
             $select->group(['file']);
+            $select->order(['downloads' => 'DESC']);
         });
         
         return $resultSet->toArray();
