@@ -1,8 +1,4 @@
-<strong>Module:</strong>        Logs &raquo;
-<strong>Controller:</strong>    LogsController &raquo;
-<strong>Action:</strong>        index
-<br /><br />
-
+<h1>Import Logs</h1>
 <p>Click the link below to process all log entries at S3:</p>
 <p>IMPORTANT: Clicking the link below will process logs, then permanently delete them from S3!</p>
-<p><a href="<?php echo $this->url('logs-process'); ?>">Process Manually</a></p>
+<p><a class="btn btn-success" href="<?php echo $this->url('logs-process'); ?>" title="Process Logs Manually">Process Logs Manually</a></p>
