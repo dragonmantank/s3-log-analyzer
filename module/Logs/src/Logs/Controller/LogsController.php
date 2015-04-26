@@ -44,7 +44,7 @@ class LogsController extends AbstractActionController
             }
         }
         
-        return new ViewModel(['contents' => "Done!<br><br>\n<a href=\"/statistics\">View Statistics</a>"]);
+        return new ViewModel(['contents' => "success"]);
     }
     
     /**

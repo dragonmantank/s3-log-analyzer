@@ -1,1 +1,8 @@
-<?php print_r($contents);
+<h1>Import Status</h1>
+<?php if ($this->contents == 'success'): ?>
+    
+    <p>Import Successful!</p>
+    
+    <a class="btn btn-success" href="/statistics" title="View Statistics">View Statistics</a>
+    
+<?php endif; ?>
