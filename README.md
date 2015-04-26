@@ -1,5 +1,5 @@
 # S3 Log Analyzer
-Simple ZF2 app to parse S3 logs into a MySQL DB instance for analysis.
+S3 Log Analyzer is a simple ZF2 app to parse S3 logs into a MySQL DB instance for analysis.
 
 IMPORTANT: This application permanently deletes the log files from AWS S3. This is by design because I do not want the log files to build up, costing me money for un-needed files after they are imported into the DB. Feel free to change this in your own fork if desired. Thank you.
 
