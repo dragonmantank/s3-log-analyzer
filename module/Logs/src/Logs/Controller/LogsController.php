@@ -40,11 +40,11 @@ class LogsController extends AbstractActionController
             
             // add entries to DB
             if ($this->insertLogToDb($logEntries)) {
-                // $filesystem->delete($log['filename']);
+                $filesystem->delete($log['path']);
             }
         }
         
-        return new ViewModel(['contents' => "Done!"]);
+        return new ViewModel(['contents' => "Done!<br><br>\n<a href=\"/statistics\">View Statistics</a>"]);
     }
     
     /**
