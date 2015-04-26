@@ -23,8 +23,9 @@ class StatisticsController extends AbstractActionController
     {
         $logs = $this->logTable->totalRequestsByDay();
         $files = $this->logTable->totalRequestsByFile();
+        $filesUnique = $this->logTable->totalRequestsByFileUnique();
         
-        return new ViewModel(['logs' => $logs, 'files' => $files]);
+        return new ViewModel(['logs' => $logs, 'files' => $files, 'filesunique' => $filesUnique]);
     }
     
     public function filetotalsAction()

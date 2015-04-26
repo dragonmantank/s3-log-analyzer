@@ -61,6 +61,17 @@ class LogTable
         return $resultSet->toArray();
     }
     
+    public function totalRequestsByFileUnique()
+    {
+        $resultSet = $this->tableGateway->select(function (Select $select)
+        {
+            $select->columns(['file', 'downloads' => new Expression('COUNT(DISTINCT(ip))') ]);
+            $select->group(['file']);
+        });
+        
+        return $resultSet->toArray();
+    }
+    
     public function totalRequestsByFileByDay($filename)
     {
         $resultSet = $this->tableGateway->select(function (Select $select) use ($filename)

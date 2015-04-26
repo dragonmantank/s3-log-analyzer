@@ -50,12 +50,25 @@
     <table id="stats">
         <tr>
             <th>Filename</th>
-            <th>Count</th>
+            <th>Total Downloads</th>
         </tr>
         <?php foreach($files as $file) : ?>
             <tr>
                 <td><a href="/statistics/filetotals/<?php echo $file['file']; ?>"><?php echo $file['file']; ?></a></td>
                 <td><?php echo $file['downloads']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <br><br>
+    <table id="stats">
+        <tr>
+            <th>Filename</th>
+            <th>Unique Requests</th>
+        </tr>
+        <?php foreach($filesunique as $fileUnique) : ?>
+            <tr>
+                <td><a href="/statistics/filetotals/<?php echo $fileUnique['file']; ?>"><?php echo $fileUnique['file']; ?></a></td>
+                <td><?php echo $fileUnique['downloads']; ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
