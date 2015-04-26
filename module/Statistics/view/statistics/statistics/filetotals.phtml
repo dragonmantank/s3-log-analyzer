@@ -8,6 +8,7 @@
         var data = new google.visualization.DataTable();
         data.addColumn('date', 'Dates');
         data.addColumn('number', 'Downloads');
+        data.addColumn('number', 'Unique Listeners');
         
         data.addRows([
             <?php
@@ -15,10 +16,18 @@
             foreach ($logs as $log) {
                 if ($i == 0) {
                     $newDate = strtotime($log['datetime'] . ' - 1 day');
-                    echo "[new Date(" . date('Y', $newDate) . "," . date('m', $newDate) . "," . date('d', $newDate) . "), 0],\n";
+                    echo "[new Date(" . date('Y', $newDate) . "," . date('m', $newDate) . "," . date('d', $newDate) . "), 0, 0],\n";
                 }
                 
-                echo "[new Date(" . substr($log['date'],0,4) . "," . substr($log['date'],5,2) . "," . substr($log['date'],8,2) . "), " . $log['downloads'] . "],\n";
+                foreach ($logsUnique as $logUnique) {
+                    $unique = 0;
+                    if ($logUnique['date'] == $log['date']) {
+                        $unique = $logUnique['downloads'];
+                        break;
+                    }
+                }
+                
+                echo "[new Date(" . substr($log['date'],0,4) . "," . substr($log['date'],5,2) . "," . substr($log['date'],8,2) . "), " . $log['downloads'] . ", " . $unique . "],\n";
                 
                 $i++;
             }

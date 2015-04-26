@@ -32,8 +32,10 @@ class StatisticsController extends AbstractActionController
     {
         $filename = $this->getEvent()->getRouteMatch()->getParam('filename');
         
+        // @todo need to combine the next two arrays, separately is dirty
         $logs = $this->logTable->totalRequestsByFileByDay($filename);
+        $logsUnique = $this->logTable->totalRequestsByFileUniqueByDay($filename);
         
-        return new ViewModel(['logs' => $logs, 'filename' => $filename]);
+        return new ViewModel(['logs' => $logs, 'filename' => $filename, 'logsUnique' => $logsUnique]);
     }
 }
