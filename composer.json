@@ -11,7 +11,7 @@
     ],
     "homepage": "https://github.com/adamculp/s3-log-analyzer",
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=5.4.0",
         "zendframework/zendframework": "~2.4",
         "bushbaby/flysystem": "~1.0",
         "league/flysystem-aws-s3-v2": "~1.0"
