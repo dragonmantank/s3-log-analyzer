@@ -28,6 +28,7 @@ class LogsController extends AbstractActionController
      */
     public function processAction()
     {
+        $i = 0;
         $sm = $this->getServiceLocator();
         $filesystem = $sm->get('BsbFlysystemManager')->get('default');
         
@@ -42,9 +43,11 @@ class LogsController extends AbstractActionController
             if ($this->insertLogToDb($logEntries)) {
                 $filesystem->delete($log['path']);
             }
+            
+            $i++;
         }
         
-        return new ViewModel(['contents' => "success"]);
+        return new ViewModel(['contents' => "success", "processed" => $i]);
     }
     
     /**
