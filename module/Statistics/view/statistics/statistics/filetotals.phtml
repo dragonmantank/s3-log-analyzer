@@ -17,7 +17,7 @@
             foreach ($logs as $log) {
                 if ($i == 0) {
                     $newDate = strtotime($log['datetime'] . ' - 1 day');
-                    echo "[new Date(" . date('Y', $newDate) . "," . date('m', $newDate) . "," . date('d', $newDate) . "), 0, 0],\n";
+                    echo "[new Date(" . date('Y', $newDate) . "," . (date('m', $newDate)-1) . "," . date('d', $newDate) . "), 0, 0],\n";
                 }
                 
                 foreach ($logsUnique as $logUnique) {
@@ -28,7 +28,7 @@
                     }
                 }
                 
-                echo "[new Date(" . substr($log['date'],0,4) . "," . substr($log['date'],5,2) . "," . substr($log['date'],8,2) . "), " . $log['downloads'] . ", " . $unique . "],\n";
+                echo "[new Date(" . substr($log['date'],0,4) . "," . (substr($log['date'],5,2)-1) . "," . substr($log['date'],8,2) . "), " . $log['downloads'] . ", " . $unique . "],\n";
                 
                 $i++;
             }
