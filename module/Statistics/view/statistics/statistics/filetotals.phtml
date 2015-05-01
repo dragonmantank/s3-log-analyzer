@@ -37,7 +37,7 @@
         
         var options = {
             chart: {
-                title: 'Downloads For File: <?php echo $filename; ?>',
+                title: 'Downloads For File: <?php echo htmlentities($filename); ?>',
                 subtitle: 'Count all downloads for specific file by day',
                 legend: 'none'
             },
