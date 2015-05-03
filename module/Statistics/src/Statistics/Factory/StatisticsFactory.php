@@ -5,7 +5,7 @@ use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Statistics\Controller\StatisticsController;
 
-class LogFactory implements FactoryInterface
+class StatisticsFactory implements FactoryInterface
 {
     public function createService(ServiceLocatorInterface $controllers)
     {

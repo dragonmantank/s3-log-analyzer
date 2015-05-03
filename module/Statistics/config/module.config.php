@@ -44,7 +44,7 @@ return array(
     ),
     'controllers' => array(
         'factories' => array(
-            'Statistics\Controller\Statistics' => 'Statistics\Factory\LogFactory',
+            'Statistics\Controller\Statistics' => 'Statistics\Factory\StatisticsFactory',
         ),
     ),
     'service_manager' => array(
