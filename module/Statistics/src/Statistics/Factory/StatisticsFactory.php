@@ -10,6 +10,6 @@ class StatisticsFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $controllers)
     {
         $services = $controllers->getServiceLocator();
-        return new StatisticsController($services->get('Statistics/Model/LogTable'));
+        return new StatisticsController($services->get('Statistics/Model/LogTableFactory'));
     }
 }

@@ -49,7 +49,7 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'Statistics/Model/LogTable' => 'Statistics\Model\LogTableFactory',
+            'Statistics/Model/LogTableFactory' => 'Statistics\Model\LogTableFactory',
         ),
     ),
     'view_manager' => array(
