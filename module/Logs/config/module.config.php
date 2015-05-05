@@ -13,9 +13,9 @@ return array(
                 ),
             ),
             'logs-process' => array(
-                'type'    => 'Literal',
+                'type'    => 'Segment',
                 'options' => array(
-                    'route'    => '/logs/process',
+                    'route'    => '/logs/process[/:bucket]',
                     'defaults' => array(
                         'controller'    => 'Logs\Controller\Logs',
                         'action'        => 'process',
