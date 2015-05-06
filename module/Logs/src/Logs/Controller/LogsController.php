@@ -20,7 +20,10 @@ class LogsController extends AbstractActionController
      */
     public function indexAction()
     {
-        return new ViewModel();
+        // @todo this should be an array from the DB with buckets
+        $buckets = ['default'];
+        
+        return new ViewModel(['buckets' => $buckets]);
     }
     
     /**
@@ -28,9 +31,11 @@ class LogsController extends AbstractActionController
      */
     public function processAction()
     {
+        $bucket = $this->getEvent()->getRouteMatch()->getParam('bucket');
+        
         $i = 0;
         $sm = $this->getServiceLocator();
-        $filesystem = $sm->get('BsbFlysystemManager')->get('default');
+        $filesystem = $sm->get('BsbFlysystemManager')->get($bucket);
         
         $logs = $this->getLoglist($filesystem);
         
