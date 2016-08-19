@@ -15,7 +15,7 @@
             $i = 0;
             foreach ($logs as $log) {
                 if ($i == 0) {
-                    $newDate = strtotime($log['datetime'] . ' - 1 day');
+                    $newDate = strtotime($log['date'] . ' - 1 day');
                     echo "[new Date(" . date('Y', $newDate) . "," . (date('m', $newDate)-1) . "," . date('d', $newDate) . "), 0],\n";
                 }
                 echo "[new Date(" . substr($log['date'],0,4) . "," . (substr($log['date'],5,2)-1) . "," . substr($log['date'],8,2) . "), " . $log['downloads'] . "],\n";

@@ -43,7 +43,7 @@ class LogTable
     {
         $resultSet = $this->tableGateway->select(function (Select $select)
         {
-            $select->columns(['date', 'datetime', 'downloads' => new Expression('COUNT(id)') ]);
+            $select->columns(['date', 'downloads' => new Expression('COUNT(id)') ]);
             $select->group('date');
         });
     
@@ -78,7 +78,7 @@ class LogTable
     {
         $resultSet = $this->tableGateway->select(function (Select $select) use ($filename)
         {
-            $select->columns(['date', 'datetime', 'downloads' => new Expression('COUNT(id)') ]);
+            $select->columns(['date', 'downloads' => new Expression('COUNT(id)') ]);
             $select->where(['file' => $filename]);
             $select->group(['date']);
         });
