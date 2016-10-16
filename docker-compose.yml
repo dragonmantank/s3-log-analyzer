@@ -1,0 +1,29 @@
+# docker-compose.dev.yml
+version: '2'
+
+volumes:
+  mysqldata:
+    driver: local
+
+services:
+  webserver:
+    build:
+      context: ./
+      dockerfile: ./phpserver.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./public:/var/www/html
+    ports:
+      - 8080:80
+
+  mysqlserver:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: my_db
+      MYSQL_USER: my_db
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - mysqldata:/var/lib/mysql
+      - ./:/opt/app

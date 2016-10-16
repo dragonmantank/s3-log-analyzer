@@ -123,4 +123,20 @@ Configured web server of choice to use /public as the document root of a virtual
 
 NOTE: The example above is to give a starting point. It may not be recommended to set AllowOverride to ALL.
 
+### Docker Setup
+
+The project ships with a `docker-compose.yml` file which should work for most needs. It will spin up a MySQL server
+along with an Apache installation, using PHP 7.0. 
+
+To use Docker:
+
+1. Clone the repository
+2. Follow the directions under `Composer Usage`
+3. Set up the database schema with:
+  * `docker exec -ti s3loganalyzer_mysqlserver_1 bash`
+  * `mysql -u my_db -p my_db < /opt/app/data/s3logs.sql`
+4. Follow the directions under `Set up AWS S3`
+5. Follow the directions under `Configration Files`
+6. Visit `http://localhost:8080` in your browser
+
 ## All Set
